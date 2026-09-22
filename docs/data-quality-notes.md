@@ -25,4 +25,12 @@
 - Remaining high-income rows ($9M-$11M) showed more plausible ratios and were retained rather than assumed erroneous.
 - Deleted the 2 confirmed-erroneous rows from `raw_loans_clean` (negligible impact - 2 rows out of ~2.26M).
 
+##Default Classification 
+- Built `is_default` via CASE WHEN across all 9 `loan_status` values: `Charged Off`/`Default`/`Does not meet the credit policy. Status:Charged Off` -> 1, `Fully Paid`/`Does not meet the credit policy. Status:Fully Paid` -> 0, remaining 4 statuses (`Current`, `Late (31-120 days)`, `Late (16-30 days)`, `In Grace Period`) -> NULL (unresolved outcome, excluded from default modeling since final outcome not yet known).
+- Verified full 2,260,666-row transformation completes via `ranked_view` using CTEs, CASE-based grade bucketing, and window functions (RANK, SUM OVER PARTITION).
+
+##Validation
+- DTI ratio confirmed to vary meaningfully across grades: avg DTI flat across grades A-D (0.542-0.555) but jumps to 0.844 for grade E - the riskiest interest-rate bucket also shows the highest average debt-to-income ratio, an independent signal supporting the grade design.
+- MIN(debt_to_income_ratio) = 0.000 across all grades traced to legitimate high-income/small-loan combinations (e.g., $9M income vs. $3,600 loan) rounding to zero at 3 decimal places - not a data quality issue.
+
 
