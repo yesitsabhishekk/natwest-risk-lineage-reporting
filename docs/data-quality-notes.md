@@ -37,4 +37,6 @@
 - Built `grade_summary` table from `ranked_view` - default rate rises monotonically from 5.86% (Grade A) to 40.71% (Grade E), a ~7x spread, validating the interest-rate-based grading approach.
 - Verified `num_loans` = `num_defaulted` + `num_paid` + `num_unresolved` for all 5 grades - no rows lost or double-counted in aggregation.
 
-
+##Chi-Square Test
+- Ran CHISQ.TEST() in Excel comparing actual vs. expected defaulted/paid counts across the 5 grades.
+- Result: p < 0.0001 - reject the null hypothesis of independence. Confirms the relationship between grade and default outcome is statistically significant, not due to chance.
