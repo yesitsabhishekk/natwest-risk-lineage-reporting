@@ -33,4 +33,8 @@
 - DTI ratio confirmed to vary meaningfully across grades: avg DTI flat across grades A-D (0.542-0.555) but jumps to 0.844 for grade E - the riskiest interest-rate bucket also shows the highest average debt-to-income ratio, an independent signal supporting the grade design.
 - MIN(debt_to_income_ratio) = 0.000 across all grades traced to legitimate high-income/small-loan combinations (e.g., $9M income vs. $3,600 loan) rounding to zero at 3 decimal places - not a data quality issue.
 
+##Aggregation Results
+- Built `grade_summary` table from `ranked_view` - default rate rises monotonically from 5.86% (Grade A) to 40.71% (Grade E), a ~7x spread, validating the interest-rate-based grading approach.
+- Verified `num_loans` = `num_defaulted` + `num_paid` + `num_unresolved` for all 5 grades - no rows lost or double-counted in aggregation.
+
 
