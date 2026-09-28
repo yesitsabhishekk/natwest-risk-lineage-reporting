@@ -1,0 +1,4 @@
+##Ai-Assisted Emerging Risk Narrative 
+
+- Default rates rise steadily with risk grade, from 5.86% in Grade A to 40.71% in Grade E (about 7x), a relationship confirmed by the chi-square test (p<0.0001). Grade E holds only 9.6% of nominal exposure ($3.28bn of $34.02bn) but 17.5% of risk-weighted exposure ($8.20bn of $46.92bn). Grades C, D and E together carry about 74% of risk-weighted exposure.
+- Recommended action: prioritise enhanced monitoring of Grades D and E, where default rates exceed 30%, and review concentration in Grade C, the largest risk-weighted position at $14.74bn. Treat all default rates as provisional: 42.2% of loans (954K) are unresolved, including 47.7% of Grade A loans, and are excluded from the default-rate denominator.
